@@ -15,7 +15,11 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`antialiased`}>{children}</body>
+        <body
+          className={`antialiased min-h-screen h-screen overflow-hidden flex flex-col`}
+        >
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
