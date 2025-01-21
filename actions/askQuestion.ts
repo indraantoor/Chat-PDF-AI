@@ -5,8 +5,8 @@ import { adminDb } from "@/firebaseAdmin";
 import { generateLangchainCompletion } from "@/lib/langchain";
 import { auth } from "@clerk/nextjs/server";
 
-const FREE_LIMIT = 3;
-const PRO_LIMIT = 100;
+// const FREE_LIMIT = 3;
+// const PRO_LIMIT = 100;
 
 export async function askQuestion(id: string, question: string) {
   auth.protect();
@@ -19,10 +19,10 @@ export async function askQuestion(id: string, question: string) {
     .doc(id)
     .collection("chat");
 
-  const chatSnapshot = await chatRef.get();
-  const userMessages = chatSnapshot.docs.filter(
-    (doc) => doc.data().role == "human"
-  );
+  //   const chatSnapshot = await chatRef.get();
+  //   const userMessages = chatSnapshot.docs.filter(
+  //     (doc) => doc.data().role == "human"
+  //   );
 
   const userMessage: Message = {
     role: "human",
