@@ -48,7 +48,7 @@ const FileUploader = () => {
         // TODO: handle no file case
       }
     },
-    [handleUpload]
+    [filesLoading, handleUpload, isOverFileLimit, toast]
   );
 
   const { getRootProps, getInputProps, isDragActive, isFocused, isDragAccept } =
