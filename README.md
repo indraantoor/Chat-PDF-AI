@@ -83,48 +83,47 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a Google Gemini AI API Key at [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
-2. Clone the repos
+1. Get a Open AI API Key at [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys)
+
+2. Get Pinecone API KEY, Firebase API Key, Firebase Service Key, Firebase Storage Bucket name, Clerk Publishable Key, Clerk Secret Key and Stripe's Publishable Key, Stripe Secret Key, Stripe Webhook Secret.
+
+3. Clone the repo
 
    ```sh
    git clone https://github.com/indraantoor/Chat-PDF-AI
    ```
 
-   ```sh
-   git clone https://github.com/indraantoor/Contract-AI-Backend
-   ```
+4. Install NPM packages In All Of These Cloned Directories
 
-3. Install NPM packages In All Of These Cloned Directories
    ```sh
    npm install
    ```
-4. In frontend directory create a ".env" file and paste your values for these variables
-   ```
-   NEXT_PUBLIC_API_URL=<YOUR_FRONTEND_URL>
-   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<YOUR_STRIPE_PUBLISHABLE_KEY>
-   ```
-5. In the backend directory create a ".env" file and paste your values for these variables
-   ```
-   MONGODB_URI=<YOUR_MONGODB_URI>
-   GOOGLE_CLIENT_ID=<YOUR_GOOGLE_CLIENT_ID>
-   GOOGLE_CLIENT_SECRET=<YOUR_GOOGLE_CLIENT_SECRET>
-   CLIENT_URL=<YOUR_FRONTEND_URL>
-   SESSION_SECRET=<YOUR_DEFINED_SESSION_SECRET>
-   UPSTASH_REDIS_REST_URL=<YOUR_UPSTASH_REDIS_REST_URL>
-   UPSTASH_REDIS_REST_TOKEN=<YOUR_UPSTASH_REDIS_TOKEN>
-   GEMINI_API_KEY=<YOUR_GEMINI_API_KEY>
-   RESEND_API_KEY=<YOUR_RESEND_API_KEY>
-   STRIPE_SECRET_KEY=<YOUR_STRIPE_SECRET_KEY>
-   ```
+
+5. In your environment variable file paste those values with the following names
+
+```sh
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<value_here>
+    CLERK_SECRET_KEY=<value_here>
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<value_here>
+    STRIPE_API_KEY=<value_here>
+    STRIPE_WEBHOOK_SECRET=<value_here>
+    PINECONE_API_KEY=<value_here>
+    OPENAI_API_KEY=<value_here>
+    FIREBASE_API_KEY=<value_here>
+    FIREBASE_SERVICE_KEY=<value_here>
+    FIREBASE_STORAGE_BUCKET=<value_here>
+```
+
 6. Run the application
+
    ```sh
-   Navigate To The Backend Directory
+   Navigate To The Directory and run
+
    npm run dev
-   ```
-   ```sh
-   Navigate To The Frontend Directory
-   npm run dev (to run app in development mode)
-   npm start (to run app in production mode)
+   (to run app in development mode)
+
+   npm start
+   (to run app in production mode after building using npm run build)
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -135,29 +134,23 @@ This is an example of how to list things you need to use the software and how to
 
 Login or sign up to access the application.
 
-<img width="1800" alt="sign up" src="https://github.com/user-attachments/assets/cbc92aa5-1c91-4bc7-bfc4-27a17ba7e6d7">
+Once on your dashboard page click on "Add a document".
 
-Once on your dashboard page click on "New Contract" button.
+Drag and drop your contract file and make sure it is in "pdf" format.
 
-<img width="1800" alt="new contract" src="https://github.com/user-attachments/assets/2c8d75b0-c73d-4b53-a632-f0bfca1f7a1f">
+Wait for the processing to get completed, you will get live updates of the step the processing is currently on.
 
-Drag and drop your contract file and make sure it is in "pdf" format and click on "Analyze Contract With AI" button. It will then detect the type of the contract and to finally completely analyze it, confirm and click on "Yes, I want to analyze it" button.
+You can now Chat With the PDF using the chatbot on the right section.
 
-Wait for the AI analysis to get completed.
+You can also delete uploaded PDF files and download them.
 
-<img width="1800" alt="analyse loading" src="https://github.com/user-attachments/assets/b4deae68-9ae1-43c1-8ebd-8dd62a05fa69">
+### Plan Restrictions
 
-To view the results click on "View Results" button
+There are 2 plans Free and PRO. In Free plan you can only upload a limited number of documents and the number of messages per document is also limited (2) and you can also not delete documents
 
-<img width="1800" alt="view results" src="https://github.com/user-attachments/assets/127b186b-d2f7-44c1-8b10-9d71b8bad030">
+In the PRO plan you can upload documents and delete documents and the chat messages limit is 20 per document.
 
-In the "FREE VERSION" you will see limited results and in "Premium" you will see full results. To See all details you can upgrade to premium.
-
-<img width="1800" alt="Screenshot 2024-11-19 at 3 25 39 PM" src="https://github.com/user-attachments/assets/0773e8c4-45eb-4760-bc82-2ebdd3d020e9">
-
-<img width="1800" alt="Screenshot 2024-11-19 at 3 26 11 PM" src="https://github.com/user-attachments/assets/a2dabe7a-a31b-495a-98ca-58c4aefdd9e8">
-
-<img width="1800" alt="Screenshot 2024-11-19 at 3 27 20 PM" src="https://github.com/user-attachments/assets/1846be58-34e8-4a5b-b7b4-f373768b6c2d">
+It is implemented using STRIPE. To upgrade from FREE to PRO you can go to the pricing page and upgrade.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
